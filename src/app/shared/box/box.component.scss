@@ -1,0 +1,10 @@
+@import "../../../styles/init-component";
+@import "../../../styles/variables";
+
+:host {
+  background-color: $white;
+  border: $border-default;
+  border-radius: $border-radius-default;
+  margin-bottom: $margin-default;
+  box-shadow: $box-shadow-default;
+}

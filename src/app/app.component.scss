@@ -1,0 +1,52 @@
+@import "../styles/init-component";
+@import "../styles/variables";
+
+$container-padding: 30px;
+
+app-header {
+  box-shadow: $box-shadow-default;
+}
+
+.container {
+  margin: $margin-default auto;
+  padding: $container-padding;
+  box-sizing: border-box;
+
+  @each $type, $size in $screen-min-sizes {
+    @include screen-size($type) {
+      width: $size;
+    }
+  }
+}
+
+.header {
+  text-align: center;
+}
+
+.component {
+  padding: $margin-default;
+
+  .fake-component {
+    width: 100%;
+  }
+}
+
+h3 {
+  text-align: center;
+}
+
+.component-description {
+  padding: $margin-default;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+  }
+
+}
+
+video {
+  width: 100%;
+}
+

@@ -1,0 +1,65 @@
+$screen-types: ('xs', 'sm', 'md', 'lg');
+
+$screen-xs: 576px !default;
+$screen-sm: 768px !default;
+$screen-md: 992px !default;
+$screen-lg: 1200px !default;
+
+$screen-min-sizes: (
+  xs: $screen-xs,
+  sm: $screen-sm,
+  md: $screen-md,
+  lg: $screen-lg
+);
+
+
+@mixin breakpoint-max($max) {
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin breakpoint-min($min) {
+  @media only screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin screen-xs() {
+  @include breakpoint-max($screen-xs) {
+    @content;
+  }
+}
+
+@mixin screen-sm() {
+  @include breakpoint-min($screen-md) {
+    @content;
+  }
+}
+
+@mixin screen-md() {
+  @include breakpoint-min($screen-lg) {
+    @content;
+  }
+}
+
+@mixin screen-lg() {
+  @include breakpoint-min($screen-lg) {
+    @content;
+  }
+}
+
+@mixin screen-size($screen-type) {
+  @if ($screen-type == 'xs') {
+    @include screen-xs() {
+      @content;
+    }
+  } @else {
+    $min: map-get($screen-min-sizes, $screen-type);
+    @include breakpoint-min($min) {
+      @content;
+    }
+  }
+}
+
+

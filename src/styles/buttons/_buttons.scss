@@ -1,0 +1,62 @@
+@import "../containers/border-radius";
+@import "../transitions/transition";
+@import "../shadows/box-shadow";
+@import "mixins";
+@import "variables";
+@import "../variables";
+
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight-default;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: $btn-border-default;
+  @include button-size(
+      $btn-padding-y,
+      $btn-padding-x,
+      $btn-font-size-default,
+      $btn-line-height,
+      $btn-border-radius
+  );
+  @include transition($btn-transition);
+
+  &:hover,
+  &.hover {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: .65;
+    @include box-shadow(none);
+  }
+
+  &:active,
+  &.active {
+    background-image: none;
+    @include box-shadow($btn-active-box-shadow);
+  }
+}
+
+.btn-primary {
+  @include button-variant($font-color-default, $white, $border-color-default);
+}
+
+.btn-sm {
+  @include button-size(
+      $btn-sm-padding-y,
+      $btn-sm-padding-x,
+      $btn-sm-font-size,
+      $btn-sm-line-height,
+      $btn-border-radius
+  );
+}

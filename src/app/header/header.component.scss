@@ -1,0 +1,14 @@
+@import "../../styles/init-component";
+@import "../../styles/variables";
+
+$app-header-height: 50px;
+
+:host {
+  text-align: center;
+  padding: $margin-default;
+  background-color: $brand-primary;
+}
+
+img {
+  height: $app-header-height;
+}
