@@ -1,0 +1,9 @@
+<section class="container">
+    <div *ngFor="let day of days">
+        <app-day [day]="day" [selected]="innerSelectedDays.indexOf(day) >= 0" (click)="dayClicked(day)"></app-day>
+    </div>
+</section>
+<section class="buttons">
+    <button class="btn-page">Previous</button>
+    <button class="btn-page">Next</button>
+</section>

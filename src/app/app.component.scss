@@ -12,11 +12,17 @@ app-header {
   padding: $container-padding;
   box-sizing: border-box;
 
-  @each $type, $size in $screen-min-sizes {
+  @each $type,
+  $size in $screen-min-sizes {
     @include screen-size($type) {
       width: $size;
     }
   }
+}
+
+.containerB {
+  justify-content: space-between;
+  display: flex;
 }
 
 .header {
@@ -49,4 +55,3 @@ h3 {
 video {
   width: 100%;
 }
-

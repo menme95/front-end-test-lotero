@@ -1,0 +1,8 @@
+<section class="selected"[ngClass]="{'selected': selected}">
+    <div class="day">
+        {{day.time | date: 'd'}}
+    </div>
+    <div class="month">
+        {{day.time | date: 'MMM'}}
+    </div>
+</section>

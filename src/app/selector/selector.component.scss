@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+
+.container {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-page {
+    border: 1px solid $thin-lines;
+    border-radius: $border-radius-default;
+    background-color: $white;
+    color: $text-color;
+    font-size: 12px;
+    font-weight: $font-weight-bold;
+
+    &:hover{
+        background-color: $gray-2;
+    }
+}

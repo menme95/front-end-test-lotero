@@ -1,0 +1,31 @@
+@import "../../../styles/variables";
+
+section {
+    width: 50px;
+    height: 60px;
+    border: 2px solid $default-number;
+    margin: 0 4px;
+    color: $default-number;
+    text-align: center;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+
+    &.selected {
+        border: 2px solid $selected-number;
+        background-color: $selected-number-backgroud;
+        color: $selected-number;
+    }
+}
+
+
+
+.day {
+    font-size: 24px;
+}
+
+.month {
+    font-size: 12px;
+}
